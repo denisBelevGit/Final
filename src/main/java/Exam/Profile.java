@@ -21,7 +21,7 @@ public class Profile {
     private WebElement profileFollowingCounter;
     @FindBy(css = "label.btn-all")
     private WebElement allButton;
-    @FindBy(css = "i.far")
+    @FindBy(id="nav-link-new-post")
     private WebElement newPostButton;
     @FindBy(tagName = "app-post")
     private List<WebElement> posts;

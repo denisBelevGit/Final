@@ -22,6 +22,10 @@ public class Login {
     @FindBy(className = "h4")
     private WebElement signInFormTitle;
 
+    @FindBy(xpath = "//*[@aria-label=\"Invalid password\"]")
+    private WebElement invalidPass;
+    @FindBy(xpath = "//*[@aria-label=\"UsernameOrEmail cannot be empty\"]")
+    private WebElement invalidUserOrEmail;
     public Login(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -66,7 +70,7 @@ public class Login {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             // Wait until the error message is visible
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@aria-label=\"UsernameOrEmail cannot be empty\"]")));
+            wait.until(ExpectedConditions.visibilityOf(invalidUserOrEmail));
             System.out.println("Error message for invalid username is displayed");
             return true;
         } catch (Exception e) {
@@ -79,8 +83,8 @@ public class Login {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             // Wait until the error message is visible
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@aria-label=\"Ivalid password\"]")));
-            System.out.println("Error message for invalid password is displayed");
+            wait.until(ExpectedConditions.visibilityOf(invalidPass));
+             System.out.println("Error message for invalid password is displayed");
             return true;
         } catch (Exception e) {
             System.out.println("Error message for invalid password is not displayed");
