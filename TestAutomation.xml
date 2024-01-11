@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MyTestSuite" verbose="1" parallel="methods" thread-count="1">
+    <test name="MyTest">
+        <classes>
+            <class name="Exam.TESTLogin"/>
+            <class name="Exam.TESTLogout"/>
+            <class name="Exam.TESTProfile"/>
+            <class name="Exam.TESTNewPost"/>
+        </classes>
+    </test>
+</suite>
