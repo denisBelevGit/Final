@@ -11,7 +11,7 @@ public class TESTNewPost extends Exam.TESTBase {
     @DataProvider(name = "getUsersForPosting")
     public Object[][] getUsersForPosting() {
         File postPicture = new File("src/main/resources/uploads/img1.jpg");
-        String caption = "Custom caption for posting image";
+        String caption = "You're in the Matrix";
 
         return new Object[][]{
                 {"blablablo", "111111A", "BlaBlaBlo", postPicture, caption}
