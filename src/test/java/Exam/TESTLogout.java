@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class TESTLogout extends Exam.TESTBase {
+public class TESTLogout extends TESTBase {
     @DataProvider(name = "getUsers")
     public Object[][] getUsers() {
         return new Object[][]{

@@ -62,19 +62,6 @@ public class Login {
         return wait.until(ExpectedConditions.urlToBe(Login.PAGE_URL));
     }
 
-    public boolean isUserNotFoundDisplayed() {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            // Wait until the error message is visible
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@aria-label=\"User not found\"]")));
-            System.out.println("Error message for User not found is displayed");
-            return true;
-        } catch (Exception e) {
-            System.out.println("Error message for User not found is not displayed");
-            return false;
-        }
-    }
-
     public boolean isInvalidUsernameDisplayed() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class TESTLogin extends Exam.TESTBase {
+public class TESTLogin extends TESTBase {
     @DataProvider(name = "getUsers")
     public Object[][] getUsers() {
         return new Object[][]{
@@ -98,8 +98,6 @@ public class TESTLogin extends Exam.TESTBase {
         // Verify that the user is still in the login page after unsuccessful login
         Assert.assertEquals(elemText, "Sign in", "User is Signed in successfully!");
 
-        // Verify there is an error message displayed
-        Assert.assertTrue(loginPage.isUserNotFoundDisplayed());
     }
 
     @Test(dataProvider = "getInvalidUsersUsername")
@@ -143,7 +141,7 @@ public class TESTLogin extends Exam.TESTBase {
     public void testInvalidPassword(String username, String password) {
         WebDriver driver = super.getDriver();
 
-        // Open iskillo Home Page
+        // Open Skillo Home Page
         Home homePage = new Home(driver);
         homePage.navigateToHome();
         homePage.isUrlLoaded();

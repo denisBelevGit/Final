@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 
-public class TESTNewPost extends Exam.TESTBase {
+public class TESTNewPost extends TESTBase {
     @DataProvider(name = "getUsersForPosting")
     public Object[][] getUsersForPosting() {
         File postPicture = new File("src/main/resources/uploads/img1.jpg");
@@ -18,9 +18,9 @@ public class TESTNewPost extends Exam.TESTBase {
         };
     }
 
-    @Test(dataProvider = "getUsersForPosting")
+   @Test(dataProvider = "getUsersForPosting")
     public void testCreatePost(String user, String password, String username, File file, String caption) {
-        WebDriver driver = super.getDriver();
+       WebDriver driver = super.getDriver();
 
         // Login to the website
         Login loginPage = new Login(driver);

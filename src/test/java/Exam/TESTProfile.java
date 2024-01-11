@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import java.io.File;
 
-public class TESTProfile extends Exam.TESTBase {
+public class TESTProfile extends TESTBase {
     @DataProvider(name = "getUsers")
     public Object[][] getUsers() {
         return new Object[][]{
